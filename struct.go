@@ -76,11 +76,13 @@ type RegisterInstanceJson struct {
 
 // Instance [de]serializeable [to|from] Eureka [XML|JSON].
 type Instance struct {
-	HostName         string `xml:"hostName" json:"hostName"`
-	App              string `xml:"app" json:"app"`
-	IPAddr           string `xml:"ipAddr" json:"ipAddr"`
-	VipAddress       string `xml:"vipAddress" json:"vipAddress"`
-	SecureVipAddress string `xml:"secureVipAddress" json:"secureVipAddress"`
+	InstanceId 	 string   `xml:"instance-id" json:"instance-id"`
+	XMLName          struct{} `xml:"instance" json:"-"`
+	HostName         string   `xml:"hostName" json:"hostName"`
+	App              string   `xml:"app" json:"app"`
+	IPAddr           string   `xml:"ipAddr" json:"ipAddr"`
+	VipAddress       string   `xml:"vipAddress" json:"vipAddress"`
+	SecureVipAddress string   `xml:"secureVipAddress" json:"secureVipAddress"`
 
 	Status           StatusType `xml:"status" json:"status"`
 	Overriddenstatus StatusType `xml:"overriddenstatus" json:"overriddenstatus"`
