@@ -76,7 +76,7 @@ type RegisterInstanceJson struct {
 
 // Instance [de]serializeable [to|from] Eureka [XML|JSON].
 type Instance struct {
-	InstanceId 	 string   `xml:"instance-id" json:"instance-id"`
+	InstanceId 	 string   `xml:"instanceId" json:"instanceId"`
 	XMLName          struct{} `xml:"instance" json:"-"`
 	HostName         string   `xml:"hostName" json:"hostName"`
 	App              string   `xml:"app" json:"app"`
