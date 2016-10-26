@@ -375,6 +375,9 @@ func populateAmazonMetadata(dst *AmazonMetadataType, src map[string]string) {
 	bindValue(&dst.HostName, src, "hostname")
 	bindValue(&dst.AmiID, src, "ami-id")
 	bindValue(&dst.InstanceType, src, "instance-type")
+	bindValue(&dst.AccountId, src, "account-id")
+	bindValue(&dst.Mac, src, "mac")
+	bindValue(&dst.VpcId, src, "vpc-id")
 }
 
 func adaptDataCenterInfo(dst *DataCenterInfo, src *preliminaryDataCenterInfo) {
