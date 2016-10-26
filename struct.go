@@ -103,6 +103,7 @@ type Instance struct {
 	Metadata  InstanceMetadata `xml:"metadata" json:"metadata"`
 
 	UniqueID func(i Instance) string `xml:"-" json:"-"`
+	AppGroupName	string `xml:"appGroupName" json:"appGroupName"`
 }
 
 // InstanceMetadata represents the eureka metadata, which is arbitrary XML.
@@ -116,6 +117,7 @@ type InstanceMetadata struct {
 // <xsd:complexType name="amazonMetdataType">
 // from http://docs.amazonwebservices.com/AWSEC2/latest/DeveloperGuide/index.html?AESDG-chapter-instancedata.html
 type AmazonMetadataType struct {
+	AccountId	 string `xml:"accountId" json:"accountId"`
 	AmiLaunchIndex   string `xml:"ami-launch-index" json:"ami-launch-index"`
 	LocalHostname    string `xml:"local-hostname" json:"local-hostname"`
 	AvailabilityZone string `xml:"availability-zone" json:"availability-zone"`
@@ -127,6 +129,8 @@ type AmazonMetadataType struct {
 	HostName         string `xml:"hostname" json:"hostname"`
 	AmiID            string `xml:"ami-id" json:"ami-id"`
 	InstanceType     string `xml:"instance-type" json:"instance-type"`
+	VpcId		 string `xml:"vpc-id" json:"vpc-id"`
+	Mac              string `xml:"mac" json:"mac"`
 }
 
 // DataCenterInfo indicates which type of data center hosts this instance
