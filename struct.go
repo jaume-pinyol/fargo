@@ -117,20 +117,21 @@ type InstanceMetadata struct {
 // <xsd:complexType name="amazonMetdataType">
 // from http://docs.amazonwebservices.com/AWSEC2/latest/DeveloperGuide/index.html?AESDG-chapter-instancedata.html
 type AmazonMetadataType struct {
-	AccountId	 string `xml:"accountId" json:"accountId"`
-	AmiLaunchIndex   string `xml:"ami-launch-index" json:"ami-launch-index"`
-	LocalHostname    string `xml:"local-hostname" json:"local-hostname"`
-	AvailabilityZone string `xml:"availability-zone" json:"availability-zone"`
 	InstanceID       string `xml:"instance-id" json:"instance-id"`
-	PublicIpv4       string `xml:"public-ipv4" json:"public-ipv4"`
-	PublicHostname   string `xml:"public-hostname" json:"public-hostname"`
-	AmiManifestPath  string `xml:"ami-manifest-path" json:"ami-manifest-path"`
-	LocalIpv4        string `xml:"local-ipv4" json:"local-ipv4"`
-	HostName         string `xml:"hostname" json:"hostname"`
 	AmiID            string `xml:"ami-id" json:"ami-id"`
 	InstanceType     string `xml:"instance-type" json:"instance-type"`
-	VpcId		 string `xml:"vpc-id" json:"vpc-id"`
+	LocalIpv4        string `xml:"local-ipv4" json:"local-ipv4"`
+	LocalHostname    string `xml:"local-hostname" json:"local-hostname"`
+	AvailabilityZone string `xml:"availability-zone" json:"availability-zone"`
+	PublicHostname   string `xml:"public-hostname" json:"public-hostname"`
+	PublicIpv4       string `xml:"public-ipv4" json:"public-ipv4"`
+	AmiLaunchIndex   string `xml:"ami-launch-index" json:"ami-launch-index"`
+	AmiManifestPath  string `xml:"ami-manifest-path" json:"ami-manifest-path"`
+	HostName         string `xml:"hostname" json:"hostname"`
 	Mac              string `xml:"mac" json:"mac"`
+	VpcId		 string `xml:"vpc-id" json:"vpc-id"`
+	AccountId	 string `xml:"accountId" json:"accountId"`
+
 }
 
 // DataCenterInfo indicates which type of data center hosts this instance

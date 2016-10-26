@@ -364,20 +364,20 @@ func bindValue(dst *string, src map[string]string, k string) bool {
 }
 
 func populateAmazonMetadata(dst *AmazonMetadataType, src map[string]string) {
-	bindValue(&dst.AmiLaunchIndex, src, "ami-launch-index")
-	bindValue(&dst.LocalHostname, src, "local-hostname")
-	bindValue(&dst.AvailabilityZone, src, "availability-zone")
-	bindValue(&dst.InstanceID, src, "instance-id")
-	bindValue(&dst.PublicIpv4, src, "public-ipv4")
-	bindValue(&dst.PublicHostname, src, "public-hostname")
-	bindValue(&dst.AmiManifestPath, src, "ami-manifest-path")
-	bindValue(&dst.LocalIpv4, src, "local-ipv4")
-	bindValue(&dst.HostName, src, "hostname")
+	bindValue(&dst.InstanceID, src, "instance-id") // always have this first as we use it as a fail fast mechanism
 	bindValue(&dst.AmiID, src, "ami-id")
 	bindValue(&dst.InstanceType, src, "instance-type")
-	bindValue(&dst.AccountId, src, "account-id")
+	bindValue(&dst.LocalIpv4, src, "local-ipv4")
+	bindValue(&dst.LocalHostname, src, "local-hostname")
+	bindValue(&dst.AvailabilityZone, src, "availability-zone")
+	bindValue(&dst.PublicHostname, src, "public-hostname")
+	bindValue(&dst.PublicIpv4, src, "public-ipv4")
+	bindValue(&dst.AmiLaunchIndex, src, "ami-launch-index")
+	bindValue(&dst.AmiManifestPath, src, "ami-manifest-path")
+	bindValue(&dst.HostName, src, "hostname")
 	bindValue(&dst.Mac, src, "mac")
 	bindValue(&dst.VpcId, src, "vpc-id")
+	bindValue(&dst.AccountId, src, "account-id")
 }
 
 func adaptDataCenterInfo(dst *DataCenterInfo, src *preliminaryDataCenterInfo) {
