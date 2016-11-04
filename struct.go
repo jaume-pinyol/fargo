@@ -104,6 +104,7 @@ type Instance struct {
 
 	UniqueID func(i Instance) string `xml:"-" json:"-"`
 	AppGroupName	string `xml:"appGroupName" json:"appGroupName"`
+	AsgName		string `xml:"asgName" json:"asgName"`
 }
 
 // InstanceMetadata represents the eureka metadata, which is arbitrary XML.
