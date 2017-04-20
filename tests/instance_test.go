@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/hudl/fargo"
+	"github.com/jaume-pinyol/fargo"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
